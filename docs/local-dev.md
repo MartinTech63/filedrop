@@ -5,8 +5,8 @@ Tout d'abord, [installez Docker avec docker-compose](https://docs.docker.com/com
 
 Ensuite, clonez le dépôt :
 ```
-    git clone https://github.com/RobinLinus/snapdrop.git
-    cd snapdrop
+    git clone https://github.com/MartinTech63/filedrop.git
+    cd filedrop
     docker-compose up -d
 ```
 Maintenant, ouvrez votre navigateur et rendez-vous sur `http://localhost:8080`.
@@ -20,12 +20,12 @@ Maintenant, ouvrez votre navigateur et rendez-vous sur `http://localhost:8080`.
 
 Si Docker est installé, utilisez la commande suivante :
 ```
-    docker pull linuxserver/snapdrop
+    docker pull MartinTech63/filedrop
 ```
 
 Pour exécuter l'image, tapez la commande suivante (si le port 8080 est occupé par l'hôte, utilisez un autre port aléatoire <port aléatoire>:80) :
 ```
-    docker run -d -p 8080:80 linuxserver/snapdrop
+    docker run -d -p 8080:80 MartinTech63/filedrop
 ```
 
 
