@@ -1,19 +1,19 @@
-# WulinGate
+# FileDrop
 
-[WulinGate](https://wulingate.com/en/): local and internet file sharing in your browser. Developed based on [Snapdrop](https://github.com/RobinLinus/snapdrop)
+[FileDrop](https://filedrop.martintech.fr/): partage de fichiers local dans votre navigateur.  Développé sur la base de [Snapdrop](https://github.com/RobinLinus/snapdrop)
 
-## Main difference from original Snapdrop
-* Using a 4-digits number as device name instead of two English words.
-* Has internet transfer capability, which based on a 6-digits number room system. 
-* The [website](https://www.wulingate.com/en/) using my own turn server instead of a public stun server, thus guaranteed transfer success rate in internet transfer situation and in complex network environment (public wifi, company network, etc.).
-* Has a received messages list, which can show last 20 received messages. 
+## Différence principale par rapport au Snapdrop d'origine
+* Utilisation d'un numéro à 4 chiffres comme nom d'appareil au lieu de deux mots anglais.
+* Possède une capacité de transfert Internet, basée sur un système de numéro de "room" à 6 chiffres. 
+* Le [site](https://filedrop.martintech.fr/) utilise mon propre serveur au lieu d'un serveur public, garantissant ainsi une réussite de transfert dans un environnement réseau complexe (wifi public, réseau d'entreprise, etc.).
+* Possède une liste des messages reçus, qui peut afficher les 20 derniers messages reçus
 
 
-#### WulinGate is built with the following awesome technologies:
+#### FileDrop est construit avec les technologies impressionnantes suivantes :
 * Vanilla HTML5 / ES6 / CSS3 frontend
 * [WebRTC](http://webrtc.org/) / [WebSockets](http://www.websocket.org/)
 * [NodeJS](https://nodejs.org/en/) backend
 * [Progressive Web App](https://wikipedia.org/wiki/Progressive_Web_App)
 
 
-Have any questions? Read our [FAQ](/docs/faq.md).
+Avez-vous des questions?  Lisez notre [FAQ](/docs/faq.md).
