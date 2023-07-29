@@ -16,17 +16,17 @@ Events.on('display-name', e => {
     const $displayName = $('displayName');
     const $displayNote = $('displayNote');
     if (sessionStorage.getItem("roomId")){
-        $displayName.textContent = 'You are: ' + me.displayName + ' @ Room: ' + me.room;
-        $displayNote.textContent = 'You can be discovered by everyone in this room';
+        $displayName.textContent = 'Vous êtes: ' + me.displayName + ' @ Room: ' + me.room;
+        $displayNote.textContent = 'Vous pouvez être découvert par tout le monde dans cette Room';
         $('room').querySelector('svg use').setAttribute('xlink:href', '#exit');
-        $('room').title = 'Exit The Room';
-        $$('x-no-peers h2').textContent = 'Input room number on other devices to send files';
+        $('room').title = 'Sortir de la salle';
+        $$('x-no-peers h2').textContent = 'Entrez le numéro de Room sur un autre appareils pour envoyer des fichiers';
     } else {
-        $displayName.textContent = 'Your device code is: ' + me.displayName;
-        $displayNote.textContent = 'You can be discovered by everyone on this network';
+        $displayName.textContent = 'Le code de votre appareil est: ' + me.displayName;
+        $displayNote.textContent = 'Vous pouvez être découvert par tout le monde sur ce réseau';
         $('room').querySelector('svg use').setAttribute('xlink:href', '#enter');
-        $('room').title = 'Join or Create a Room';
-        $$('x-no-peers h2').textContent = 'Open Snapdrop on other devices to send files';
+        $('room').title = 'Rejoindre ou créer une Room';
+        $$('x-no-peers h2').textContent = 'Ouvrez FileDrop sur un autres appareils pour envoyer des fichiers';
     }
     $displayName.title = me.deviceName;
 });
@@ -92,7 +92,7 @@ class PeerUI {
 
     html() {
         return `
-            <label class="column center" title="Click to send files or right click to send a message">
+            <label class="column center" title="Cliquez pour envoyer des fichiers ou faites un clic droit pour envoyer un message">
                 <input type="file" multiple>
                 <x-icon shadow="1">
                     <svg class="icon"><use xlink:href="#"/></svg>
@@ -380,7 +380,7 @@ class ReceivedMsgsDialog extends Dialog {
     async _onCopy(e){
         e.preventDefault();
         await navigator.clipboard.writeText(e.target.closest('.MsgItem').querySelector('.MsgContent').textContent);
-        Events.fire('notify-user', 'Copied to clipboard');
+        Events.fire('notify-user', 'Copié dans le presse-papier');
     }
 
     html() {
@@ -388,7 +388,7 @@ class ReceivedMsgsDialog extends Dialog {
             <div class="MsgTextBox">
                 <div class="MsgContent"></div>
             </div>
-            <a herf="#" class="copy center" title="Copy to clipboard">
+            <a herf="#" class="copy center" title="Copier dans le presse-papier">
                 <svg>
                     <use xlink:href="#icon-copy" />
                 </svg>
@@ -495,7 +495,7 @@ class ReceiveTextDialog extends Dialog {
 
     async _onCopy() {
         await navigator.clipboard.writeText(this.$text.textContent);
-        Events.fire('notify-user', 'Copied to clipboard');
+        Events.fire('notify-user', 'Copié dans le presse-papier');
     }
 }
 
@@ -593,7 +593,7 @@ class Notifications {
 
     _copyText(message, notification) {
         notification.close();
-        newClipboard.writeText(message) ? this._notify('Copied text to clipboard') : this._notify('Copy failed, please return web page to copy.');
+        newClipboard.writeText(message) ? this._notify('Copié dans le presse-papier') : this._notify('Échec de la copie, veuillez recharger la page Web.');
     }
 
     _bind(notification, handler) {
@@ -616,11 +616,11 @@ class NetworkStatusUI {
     }
 
     _showOfflineMessage() {
-        Events.fire('notify-user', 'You are offline');
+        Events.fire('notify-user', 'Vous ètes hors ligne');
     }
 
     _showOnlineMessage() {
-        Events.fire('notify-user', 'You are back online');
+        Events.fire('notify-user', 'Vous êtes de retour en ligne');
     }
 }
 
@@ -748,10 +748,10 @@ Events.on('load', () => {
 });
 
 Notifications.PERMISSION_ERROR = `
-Notifications permission has been blocked
-as the user has dismissed the permission prompt several times.
-This can be reset in Page Info
-which can be accessed by clicking the lock icon next to the URL.`;
+L'autorisation de notification a été bloquée
+car l'utilisateur a rejeté l'invite d'autorisation plusieurs fois.
+Cela peut être réinitialisé dans les informations sur la page
+accessible en cliquant sur l'icône de verrouillage à côté de l'URL.`;
 
 document.body.onclick = e => { // safari hack to fix audio
     document.body.onclick = null;
