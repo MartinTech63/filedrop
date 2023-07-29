@@ -1,7 +1,7 @@
-# Frequently Asked Questions
+# Questions Fréquemment Posées
 
 ### Instructions / Discussions
-* [Video Instructions](https://www.youtube.com/watch?v=4XN02GkcHUM) (Big thanks to [TheiTeckHq](https://www.youtube.com/channel/UC_DUzWMb8gZZnAbISQjmAfQ))
+* [Instructions Vidéo](https://www.youtube.com/watch?v=4XN02GkcHUM) (Un grand merci à [TheiTeckHq](https://www.youtube.com/channel/UC_DUzWMb8gZZnAbISQjmAfQ))
 * [idownloadblog](http://www.idownloadblog.com/2015/12/29/snapdrop/)
 * [thenextweb](http://thenextweb.com/insider/2015/12/27/snapdrop-is-a-handy-web-based-replacement-for-apples-fiddly-airdrop-file-transfer-tool/)
 * [winboard](http://www.winboard.org/artikel-ratgeber/6253-dateien-vom-desktop-pc-mit-anderen-plattformen-teilen-mit-snapdrop.html)
@@ -10,36 +10,34 @@
 * [Reddit](https://www.reddit.com/r/Android/comments/et4qny/snapdrop_is_a_free_open_source_cross_platform/)
 * [Producthunt](https://www.producthunt.com/posts/snapdrop)
 
-### Help! I can't install the PWA!
-if you are using a Chromium-based browser (Chrome, Edge, Brave, etc.), you can easily install Snapdrop PWA on your desktop by clicking the install button in the top-right corner while on [snapdrop.net](https://snapdrop.net) (see below).
+### Aide ! Je ne peux pas installer l'application web progressive (PWA) !
+Si vous utilisez un navigateur basé sur Chromium (Chrome, Edge, Brave, etc.), vous pouvez facilement installer Snapdrop en tant que PWA sur votre ordinateur de bureau en cliquant sur le bouton d'installation en haut à droite lorsque vous êtes sur [snapdrop.net](https://snapdrop.net) (voir ci-dessous).
 <img src="pwa-install.png">
 
-### What about the connection? Is it a P2P-connection directly from device to device or is there any third-party-server?
-It uses a P2P connection if WebRTC is supported by the browser. WebRTC needs a Signaling Server, but it is only used to establish a connection and is not involved in the file transfer.
+### Qu'en est-il de la connexion ? S'agit-il d'une connexion pair à pair (P2P) directement d'un appareil à un autre, ou y a-t-il un serveur tiers impliqué ?
+Snapdrop utilise une connexion P2P si WebRTC est pris en charge par le navigateur. WebRTC nécessite un serveur de signalisation, mais il est uniquement utilisé pour établir une connexion et n'intervient pas dans le transfert de fichiers.
 
-### What about privacy? Will files be saved on third-party-servers?
-None of your files are ever sent to any server. Files are sent only between peers. Snapdrop doesn't even use a database. If you are curious have a look [at the Server](https://github.com/RobinLinus/snapdrop/blob/master/server/). Even if Snapdrop was able to view the files being transfered, WebRTC encrypts the files on transit, so the server would be unable to read them.
+### Qu'en est-il de la confidentialité ? Les fichiers seront-ils enregistrés sur des serveurs tiers ?
+Aucun de vos fichiers n'est jamais envoyé à un serveur tiers. Les fichiers sont envoyés uniquement entre pairs. Snapdrop n'utilise même pas de base de données. Si vous êtes curieux, vous pouvez consulter [le code du serveur](https://github.com/RobinLinus/snapdrop/blob/master/server/). Même si Snapdrop pouvait voir les fichiers en cours de transfert, WebRTC chiffre les fichiers en transit, de sorte que le serveur serait incapable de les lire.
 
-### What about security? Are my files encrypted while being sent between the computers?
-Yes. Your files are sent using WebRTC, which encrypts them on transit.
+### Qu'en est-il de la sécurité ? Mes fichiers sont-ils chiffrés lorsqu'ils sont envoyés entre les ordinateurs ?
+Oui. Vos fichiers sont envoyés à l'aide de WebRTC, qui les chiffre en transit.
 
-### Why don't you implement feature xyz?
-Snapdrop is a study in radical simplicity. The user interface is insanely simple. Features are chosen very carefully because complexity grows quadratically since every feature potentially interferes with each other feature. We focus very narrowly on a single use case: instant file transfer. 
-We are not trying to optimize for some edge-cases. We are optimizing the user flow of the average users. Don't be sad if we decline your feature request for the sake of simplicity. 
+### Pourquoi n'implémentez-vous pas la fonctionnalité xyz ?
+Snapdrop est une étude sur la simplicité radicale. L'interface utilisateur est incroyablement simple. Les fonctionnalités sont choisies très soigneusement car la complexité croît de manière quadratique, car chaque fonctionnalité interfère potentiellement avec toutes les autres. Nous nous concentrons très étroitement sur un seul cas d'utilisation : le transfert instantané de fichiers.
+Nous n'essayons pas d'optimiser pour certains cas particuliers. Nous optimisons le flux de travail de l'utilisateur moyen. Ne soyez pas triste si nous refusons votre demande de fonctionnalité au nom de la simplicité.
 
-If you want to learn more about simplicity you can read [Insanely Simple: The Obsession that Drives Apple's Success](https://www.amazon.com/Insanely-Simple-Ken-Segall-audiobook/dp/B007Z9686O) or [Thinking, Fast and Slow](https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555).
+Si vous souhaitez en savoir plus sur la simplicité, vous pouvez lire [Insanely Simple: The Obsession that Drives Apple's Success](https://www.amazon.com/Insanely-Simple-Ken-Segall-audiobook/dp/B007Z9686O) ou [Thinking, Fast and Slow](https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555).
 
+### Snapdrop est génial ! Comment puis-je le soutenir ?
+* [Faites un don via PayPal pour aider à couvrir les coûts du serveur](https://www.paypal.com/donate/?hosted_button_id=FTP9DXUR7LA7Q)
+* [Signalez des bugs, donnez des commentaires, soumettez des suggestions](https://github.com/RobinLinus/snapdrop/issues)
+* Partagez Snapdrop sur vos réseaux sociaux.
+* Corrigez des bugs et soumettez une demande de pull (pull request).
+* Effectuez des analyses de sécurité et proposez des suggestions.
 
-### Snapdrop is awesome! How can I support it? 
-* [Donate via PayPal to help cover the server costs](https://www.paypal.com/donate/?hosted_button_id=FTP9DXUR7LA7Q)
-* [File bugs, give feedback, submit suggestions](https://github.com/RobinLinus/snapdrop/issues)
-* Share Snapdrop on your social media.
-* Fix bugs and make a pull request. 
-* Do security analysis and suggestions
-
-
-## "Inofficial" Instances
-Here's a list of other people hosting inofficial instances of Snapdrop:
+## Instances "Non officielles"
+Voici une liste d'autres personnes hébergeant des instances non officielles de Snapdrop :
 
 - https://snapdrop.k26.ch/
 - https://snapdrop.9pfs.repl.co/
@@ -49,26 +47,23 @@ Here's a list of other people hosting inofficial instances of Snapdrop:
 - https://snapdrop.fairysoft.net/
 - https://airtransferer.web.app/
 
-DISCLAIMER: WE ARE NOT IN ANY WAY AFFILIATED WITH THE PEOPLE WHO RUN THESE INSTANCES. WE DO NOT KNOW THEM. WE CANNOT VERIFY THE CODE THEY ARE RUNNING!
+AVERTISSEMENT : NOUS NE SOMMES EN AUCUN CAS AFFILIÉS AUX PERSONNES QUI GÈRENT CES INSTANCES. NOUS NE LES CONNAISSONS PAS. NOUS NE POUVONS PAS VÉRIFIER LE CODE QU'ILS EXÉCUTENT !
 
+## Applications Tierces
+Voici une liste de certaines applications tierces pour Snapdrop :
 
-## Third-Party Apps
-Here's a list of some third-party Snapdrop apps:
+1. [Application de bureau Snapdrop](https://github.com/alextwothousand/snapdrop-desktop) basée sur Electron. (Merci à [alextwothousand](https://github.com/alextwothousand/)).
 
-1. [Snapdrop Desktop App](https://github.com/alextwothousand/snapdrop-desktop) built on top of Electron. (Thanks to [alextwothousand!](https://github.com/alextwothousand/)).
+2. [Application Android Snapdrop](https://github.com/fm-sys/snapdrop-android) qui vous permet également d'envoyer des fichiers directement à partir d'autres applications via l'action de partage.
 
-1. [Snapdrop Android App](https://github.com/fm-sys/snapdrop-android) allows you to also send files directly from other apps via the share action.
+3. [Application Flutter Snapdrop](https://github.com/congnguyendinh0/snapdrop_flutter)
 
-1. [Snapdrop Flutter App](https://github.com/congnguyendinh0/snapdrop_flutter)
+4. [Application iOS Snapdrop](https://github.com/CDsigma/Snapdrop-iOS-App)
 
-1. [Snapdrop iOS App](https://github.com/CDsigma/Snapdrop-iOS-App)
+5. [Application Node Snapdrop (avec serveur complètement Node)](https://github.com/Bellisario/node-snapdrop)
 
-1. [Snapdrop Node App (with completely Node server)](https://github.com/Bellisario/node-snapdrop)
+6. [Extension VSCode SnapDrop](https://github.com/Yash-Garg/snapdrop-vsc)
 
-1. [SnapDrop VSCode Extension](https://github.com/Yash-Garg/snapdrop-vsc)
+7. N'hésitez pas à en créer une vous-même :)
 
-1. Feel free to make one :)
-
-
-
-[< Back](/README.md)
+[< Retour](/README.md)
