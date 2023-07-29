@@ -1,29 +1,29 @@
-# Local Development
-## Install
+# Développement Local
+## Installation
 
-First, [Install docker with docker-compose.](https://docs.docker.com/compose/install/)
+Tout d'abord, [installez Docker avec docker-compose](https://docs.docker.com/compose/install/).
 
-Then, clone the repository:
+Ensuite, clonez le dépôt :
 ```
     git clone https://github.com/RobinLinus/snapdrop.git
     cd snapdrop
     docker-compose up -d
 ```
-Now point your browser to `http://localhost:8080`.
+Maintenant, ouvrez votre navigateur et rendez-vous sur `http://localhost:8080`.
 
-- To restart the containers run `docker-compose restart`.
-- To stop the containers run `docker-compose stop`.
-- To debug the NodeJS server run `docker logs snapdrop_node_1`.
+- Pour redémarrer les conteneurs, exécutez `docker-compose restart`.
+- Pour arrêter les conteneurs, exécutez `docker-compose stop`.
+- Pour déboguer le serveur NodeJS, exécutez `docker logs snapdrop_node_1`.
 
 
-## Run locally by pulling image from Docker Hub
+## Exécution locale en téléchargeant l'image depuis Docker Hub
 
-Have docker installed, then use the command:
+Si Docker est installé, utilisez la commande suivante :
 ```
     docker pull linuxserver/snapdrop
 ```
 
-To run the image, type (if port 8080 is occupied by host use another random port <random port>:80):
+Pour exécuter l'image, tapez la commande suivante (si le port 8080 est occupé par l'hôte, utilisez un autre port aléatoire <port aléatoire>:80) :
 ```
     docker run -d -p 8080:80 linuxserver/snapdrop
 ```
@@ -33,29 +33,29 @@ To run the image, type (if port 8080 is occupied by host use another random port
 
 
 
-## Testing PWA related features
-PWAs require that the app is served under a correctly set up and trusted TLS endpoint.
+## Tests des fonctionnalités liées à PWA
+Les applications web progressives (PWA) nécessitent que l'application soit servie sous un point de terminaison TLS correctement configuré et approuvé.
 
-The nginx container creates a CA certificate and a website certificate for you. To correctly set the common name of the certificate, you need to change the FQDN environment variable in `docker/fqdn.env` to the fully qualified domain name of your workstation.
+Le conteneur nginx crée un certificat d'autorité (CA) et un certificat de site web pour vous. Pour définir correctement le nom commun du certificat, vous devez modifier la variable d'environnement FQDN dans `docker/fqdn.env` pour qu'elle corresponde au nom de domaine complètement qualifié de votre poste de travail.
 
-If you want to test PWA features, you need to trust the CA of the certificate for your local deployment. For your convenience, you can download the crt file from `http://<Your FQDN>:8080/ca.crt`. Install that certificate to the trust store of your operating system.
-- On Windows, make sure to install it to the `Trusted Root Certification Authorities` store.
-- On MacOS, double click the installed CA certificate in `Keychain Access`, expand `Trust`, and select `Always Trust` for SSL.
-- Firefox uses its own trust store. To install the CA, point Firefox at `http://<Your FQDN>:8080/ca.crt`. When prompted, select `Trust this CA to identify websites` and click OK.
-- When using Chrome, you need to restart Chrome so it reloads the trust store (`chrome://restart`). Additionally, after installing a new cert, you need to clear the Storage (DevTools -> Application -> Clear storage -> Clear site data).
+Si vous souhaitez tester les fonctionnalités PWA, vous devez approuver le CA du certificat pour votre déploiement local. Pour vous simplifier la tâche, vous pouvez télécharger le fichier crt à partir de `http://<Votre FQDN>:8080/ca.crt`. Installez ce certificat dans le magasin de confiance de votre système d'exploitation.
+- Sous Windows, assurez-vous de l'installer dans le magasin `Autorités de certification racines de confiance`.
+- Sous MacOS, double-cliquez sur le certificat CA installé dans `Accès aux clés`, développez `Confiance`, et sélectionnez `Toujours approuver` pour SSL.
+- Firefox utilise son propre magasin de confiance. Pour installer le CA, accédez à `http://<Votre FQDN>:8080/ca.crt` dans Firefox. Lorsque vous y êtes invité, sélectionnez `Faire confiance à cette CA pour identifier les sites Web` et cliquez sur OK.
+- Lorsque vous utilisez Chrome, vous devez redémarrer Chrome pour qu'il recharge le magasin de confiance (`chrome://restart`). De plus, après avoir installé un nouveau certificat, vous devez vider le stockage (Outils de développement -> Application -> Vider le stockage -> Vider les données du site).
 
-Please note that the certificates (CA and webserver cert) expire after a day.
-Also, whenever you restart the nginx docker, container new certificates are created.
+Veuillez noter que les certificats (CA et certificat du serveur web) expirent après un jour.
+De plus, à chaque redémarrage du conteneur nginx, de nouveaux certificats sont créés.
 
-The site is served on `https://<Your FQDN>:443`.
+Le site est servi sur `https://<Votre FQDN>:443`.
     
-## Deployment Notes
-The client expects the server at http(s)://your.domain/server.
+## Notes de Déploiement
+Le client s'attend à trouver le serveur à l'adresse http(s)://votre.domaine/serveur.
 
-When serving the node server behind a proxy, the `X-Forwarded-For` header has to be set by the proxy. Otherwise, all clients that are served by the proxy will be mutually visible.
+Lorsque vous servez le serveur Node derrière un proxy, l'en-tête `X-Forwarded-For` doit être défini par le proxy. Sinon, tous les clients servis par le proxy seront mutuellement visibles.
 
-By default, the server listens on port 3000.
+Par défaut, le serveur écoute sur le port 3000.
 
-For an nginx configuration example, see `docker/nginx/default.conf`.
+Pour un exemple de configuration nginx, consultez `docker/nginx/default.conf`.
 
-[< Back](/README.md)
+[< Retour](/README.md)
